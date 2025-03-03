@@ -14,11 +14,11 @@ VERSION_PLATFORM=$2${PLUGIN_PLATFORM:+"-$PLUGIN_PLATFORM"}
 rm -rf rootfs
 docker plugin disable csi-digitalocean:latest
 docker plugin rm csi-digitalocean:latest
-docker plugin disable $ORG/swarm-csi-digitalocean:v$VERSION_PLATFORM
-docker plugin rm $ORG/swarm-csi-digitalocean:v$VERSION_PLATFORM
+docker plugin disable $ORG/swarm-csi-digitalocean:$VERSION_PLATFORM
+docker plugin rm $ORG/swarm-csi-digitalocean:$VERSION_PLATFORM
 docker rm -vf rootfsimage
 
-docker create --name rootfsimage docker.io/digitalocean/do-csi-plugin:v$VERSION
+docker create --name rootfsimage docker.io/digitalocean/do-csi-plugin:$VERSION
 mkdir -p rootfs
 docker export rootfsimage | tar -x -C rootfs
 docker rm -vf rootfsimage
