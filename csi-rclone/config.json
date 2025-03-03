@@ -4,40 +4,7 @@
 	"entrypoint": [
 		"/entrypoint.sh"
 	],
-	"env": [
-		{
-			"name": "S3_PROVIDER",
-			"description": "S3 Provider Name",
-			"settable": [
-				"value"
-			],
-			"value": "Minio | AWS"
-		},
-		{
-			"name": "S3_ENDPOINT",
-			"description": "S3 Provider Endpoint",
-			"settable": [
-				"value"
-			],
-			"value": null
-		},
-		{
-			"name": "S3_ACCESS_KEY_ID",
-			"description": "S3 Access Key ID",
-			"settable": [
-				"value"
-			],
-			"value": null
-		},
-		{
-			"name": "S3_SECRET_ACCESS_KEY",
-			"description": "S3 Secret Access Key",
-			"settable": [
-				"value"
-			],
-			"value": null
-		}
-	],
+	"env": [],
 	"interface": {
 		"socket": "csi-rclone.sock",
 		"types": [

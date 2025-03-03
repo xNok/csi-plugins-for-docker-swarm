@@ -29,11 +29,9 @@ docker plugin enable $ORG/swarm-csi-rclone:$VERSION_PLATFORM
 docker plugin push $ORG/swarm-csi-rclone:$VERSION_PLATFORM
 docker plugin disable $ORG/swarm-csi-rclone:$VERSION_PLATFORM
 docker plugin rm $ORG/swarm-csi-rclone:$VERSION_PLATFORM
+echo "Install Plugin"
 docker plugin install \
     --alias csi-rclone \
     --grant-all-permissions \
-    $ORG/swarm-csi-rclone:$VERSION_PLATFORM \
-    S3_PROVIDER=$3 \
-    S3_ENDPOINT=$4 \
-    S3_ACCESS_KEY_ID=$5 \
-    S3_SECRET_ACCESS_KEY=$6
+    $ORG/swarm-csi-rclone:$VERSION_PLATFORM DEBUG=1
+
