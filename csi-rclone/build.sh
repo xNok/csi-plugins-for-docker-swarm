@@ -1,8 +1,8 @@
 #!/bin/bash
 
-USAGE="Usage: ./build.sh <Docker Hub Organization> <rclone CSI version> <S3 provider> <S3 Endpoint> <s3 API Key ID> <S3 Secret Access Key>"
+USAGE="Usage: ./build.sh <Docker Hub Organization> <rclone CSI version>"
 
-if [ "$1" == "--help" ] || [ "$#" -lt "6" ]; then
+if [ "$1" == "--help" ] || [ "$#" -lt "2" ]; then
     echo $USAGE
     exit 0
 fi
@@ -33,5 +33,4 @@ echo "Install Plugin"
 docker plugin install \
     --alias csi-rclone \
     --grant-all-permissions \
-    $ORG/swarm-csi-rclone:$VERSION_PLATFORM DEBUG=1
-
+    $ORG/swarm-csi-rclone:$VERSION_PLATFORM

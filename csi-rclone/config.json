@@ -4,7 +4,12 @@
 	"entrypoint": [
 		"/entrypoint.sh"
 	],
-	"env": [],
+	"env": [
+		{
+			"name": "CSI_ENDPOINT",
+			"value": "unix:///run/docker/plugins/csi-rclone.sock"
+		  }
+	],
 	"interface": {
 		"socket": "csi-rclone.sock",
 		"types": [
